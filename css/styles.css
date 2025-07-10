@@ -1,0 +1,316 @@
+/* Professional Hospital Management System Styles */
+
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --accent-color: #e74c3c;
+  --success-color: #27ae60;
+  --warning-color: #f39c12;
+  --light-bg: #ecf0f1;
+  --dark-text: #2c3e50;
+  --light-text: #ffffff;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+body {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--dark-text);
+}
+
+/* Navbar Styling */
+.navbar {
+  background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
+  box-shadow: var(--box-shadow);
+  padding: 1rem 0;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: var(--light-text) !important;
+}
+
+.navbar-nav .nav-link {
+  color: var(--light-text) !important;
+  font-weight: 500;
+  transition: var(--transition);
+  margin: 0 0.5rem;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #f8f9fa !important;
+  transform: translateY(-2px);
+}
+
+.navbar-nav .nav-link.active {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: var(--border-radius);
+  padding: 0.5rem 1rem;
+}
+
+/* Main Container */
+.container {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+}
+
+/* Cards */
+.card {
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+  background: linear-gradient(90deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+  color: var(--light-text);
+  border-radius: var(--border-radius) var(--border-radius) 0 0 !important;
+  font-weight: bold;
+}
+
+/* Forms */
+.form-control {
+  border: 2px solid #e9ecef;
+  border-radius: var(--border-radius);
+  padding: 0.75rem;
+  transition: var(--transition);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.form-control:focus {
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+  background: white;
+}
+
+.form-label {
+  font-weight: 600;
+  color: var(--dark-text);
+  margin-bottom: 0.5rem;
+}
+
+/* Buttons */
+.btn {
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+  border: none;
+  box-shadow: var(--box-shadow);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+}
+
+.btn-warning {
+  background: linear-gradient(45deg, var(--warning-color) 0%, #e67e22 100%);
+  border: none;
+  color: white;
+}
+
+.btn-danger {
+  background: linear-gradient(45deg, var(--accent-color) 0%, #c0392b 100%);
+  border: none;
+}
+
+.btn-outline-light {
+  border: 2px solid var(--light-text);
+  color: var(--light-text);
+  font-weight: 600;
+}
+
+.btn-outline-light:hover {
+  background: var(--light-text);
+  color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+/* Tables */
+.table {
+  background: white;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+}
+
+.table thead th {
+  background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: var(--light-text);
+  border: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 1rem;
+}
+
+.table tbody tr {
+  transition: var(--transition);
+}
+
+.table tbody tr:hover {
+  background: rgba(52, 152, 219, 0.1);
+  transform: scale(1.01);
+}
+
+.table tbody td {
+  padding: 1rem;
+  border-bottom: 1px solid #e9ecef;
+  vertical-align: middle;
+}
+
+/* Modals */
+.modal-content {
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+  background: linear-gradient(90deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+  color: var(--light-text);
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+.modal-title {
+  font-weight: bold;
+}
+
+/* Alerts */
+.alert {
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  box-shadow: var(--box-shadow);
+}
+
+.alert-success {
+  background: linear-gradient(45deg, var(--success-color) 0%, #2ecc71 100%);
+  color: white;
+}
+
+.alert-danger {
+  background: linear-gradient(45deg, var(--accent-color) 0%, #c0392b 100%);
+  color: white;
+}
+
+/* Search Box */
+#patientSearchBox, #doctorSearchBox, #appointmentSearchBox {
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #e9ecef;
+  border-radius: var(--border-radius);
+  padding: 0.75rem;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+#patientSearchBox:focus, #doctorSearchBox:focus, #appointmentSearchBox:focus {
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+  background: white;
+}
+
+/* Page Headers */
+h1, h2, h3 {
+  color: var(--primary-color);
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  background: linear-gradient(45deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Login/Signup Pages */
+.login-container, .signup-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.card {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.container {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    margin: 1rem;
+    padding: 1rem;
+  }
+  
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}

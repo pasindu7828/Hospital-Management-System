@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hospital Management System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <i class="fas fa-hospital-alt me-2"></i>HospitalMS
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html"><i class="fas fa-home me-1"></i>Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="patients.html"><i class="fas fa-user-injured me-1"></i>Patients</a></li>
+          <li class="nav-item"><a class="nav-link" href="doctors.html"><i class="fas fa-user-md me-1"></i>Doctors</a></li>
+          <li class="nav-item"><a class="nav-link" href="appointments.html"><i class="fas fa-calendar-check me-1"></i>Appointments</a></li>
+          <li class="nav-item">
+            <button id="logoutBtn" class="btn btn-outline-light ms-3 d-none">
+              <i class="fas fa-sign-out-alt me-1"></i>Logout
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="text-center mb-5">
+          <i class="fas fa-hospital-alt me-3"></i>
+          Welcome to Hospital Management System
+        </h1>
+        <p class="text-center lead mb-5">Efficiently manage patients, doctors, and appointments with our comprehensive healthcare management solution.</p>
+      </div>
+    </div>
+
+    <!-- Feature Cards -->
+    <div class="row g-4 mb-5">
+      <div class="col-md-4">
+        <div class="card h-100 text-center">
+          <div class="card-body">
+            <i class="fas fa-user-injured fa-3x text-primary mb-3"></i>
+            <h5 class="card-title">Patient Management</h5>
+            <p class="card-text">Comprehensive patient records management with detailed medical history and treatment plans.</p>
+            <a href="patients.html" class="btn btn-primary">
+              <i class="fas fa-arrow-right me-1"></i>Manage Patients
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 text-center">
+          <div class="card-body">
+            <i class="fas fa-user-md fa-3x text-success mb-3"></i>
+            <h5 class="card-title">Doctor Management</h5>
+            <p class="card-text">Efficiently manage doctor profiles, specialties, and schedules for optimal healthcare delivery.</p>
+            <a href="doctors.html" class="btn btn-primary">
+              <i class="fas fa-arrow-right me-1"></i>Manage Doctors
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 text-center">
+          <div class="card-body">
+            <i class="fas fa-calendar-check fa-3x text-warning mb-3"></i>
+            <h5 class="card-title">Appointment Scheduling</h5>
+            <p class="card-text">Streamlined appointment booking system with real-time availability and scheduling.</p>
+            <a href="appointments.html" class="btn btn-primary">
+              <i class="fas fa-arrow-right me-1"></i>Manage Appointments
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Statistics Section -->
+    <div class="row g-4">
+      <div class="col-12">
+        <h3 class="text-center mb-4">
+          <i class="fas fa-chart-bar me-2"></i>System Overview
+        </h3>
+      </div>
+      <div class="col-md-3">
+        <div class="card text-center">
+          <div class="card-body">
+            <i class="fas fa-users fa-2x text-primary mb-2"></i>
+            <h4 id="patientCount">0</h4>
+            <p class="card-text">Total Patients</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card text-center">
+          <div class="card-body">
+            <i class="fas fa-user-md fa-2x text-success mb-2"></i>
+            <h4 id="doctorCount">0</h4>
+            <p class="card-text">Total Doctors</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card text-center">
+          <div class="card-body">
+            <i class="fas fa-calendar fa-2x text-warning mb-2"></i>
+            <h4 id="appointmentCount">0</h4>
+            <p class="card-text">Total Appointments</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card text-center">
+          <div class="card-body">
+            <i class="fas fa-clock fa-2x text-info mb-2"></i>
+            <h4 id="todayAppointments">0</h4>
+            <p class="card-text">Today's Appointments</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS Bundle CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Show logout button if logged in
+    if (localStorage.getItem('isLoggedIn') === 'true') {
+      document.getElementById('logoutBtn').classList.remove('d-none');
+    }
+
+    // Update statistics
+    function updateStats() {
+      const patients = JSON.parse(localStorage.getItem('patients') || '[]');
+      const doctors = JSON.parse(localStorage.getItem('doctors') || '[]');
+      const appointments = JSON.parse(localStorage.getItem('appointments') || '[]');
+      
+      document.getElementById('patientCount').textContent = patients.length;
+      document.getElementById('doctorCount').textContent = doctors.length;
+      document.getElementById('appointmentCount').textContent = appointments.length;
+      
+      // Count today's appointments
+      const today = new Date().toISOString().split('T')[0];
+      const todayAppointments = appointments.filter(apt => apt.date.startsWith(today));
+      document.getElementById('todayAppointments').textContent = todayAppointments.length;
+    }
+
+    // Update stats on page load
+    updateStats();
+  </script>
+</body>
+</html>
